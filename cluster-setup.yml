@@ -1,0 +1,16 @@
+- name: Install kubernetes master components 
+  hosts: masters
+  become: yes 
+  roles:
+    - runtime 
+    - kube-pack
+    - master
+
+- name: Install kubetnetes node components 
+  hosts: nodes
+  become: yes 
+  roles:
+    - runtime
+    - kube-pack 
+    - node
+
